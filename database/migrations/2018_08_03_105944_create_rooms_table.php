@@ -15,10 +15,10 @@ class CreateRoomsTable extends Migration
     {
         Schema::create('rooms', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('accommodation_id')->unsigned();
-            $table->integer('room_type_id')->usigned();
+            $table->unsignedInteger('accommodation_id')->nullable();
+            $table->integer('room_type_id')->unsigned();
             $table->integer('room_number')->unsigned();
-            $table->integer('rating_id')->usigned();
+            $table->integer('rating_id')->unsigned();
             $table->integer('floor')->default(0);
             $table->boolean('smoking');
             $table->timestamps();

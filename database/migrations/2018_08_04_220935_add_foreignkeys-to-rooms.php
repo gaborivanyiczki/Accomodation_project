@@ -14,7 +14,7 @@ class AddForeignkeysToRooms extends Migration
     public function up()
     {
         Schema::table('rooms', function (Blueprint $table) {
-            $table->foreign('accommodation_id')->references('id')->on('accomodations')->onDelete('cascade');
+            $table->foreign('accommodation_id')->references('id')->on('accommodations')->onDelete('cascade');
             $table->foreign('room_type_id')->references('id')->on('room_types')->onDelete('cascade');
             $table->foreign('rating_id')->references('id')->on('star_ratings')->onDelete('cascade');
 
@@ -29,9 +29,10 @@ class AddForeignkeysToRooms extends Migration
     public function down()
     {
         Schema::table('rooms', function (Blueprint $table) {
-            $table->foreign('accommodation_id')->references('id')->on('accomodations')->onDelete('cascade');
+            $table->foreign('accommodation_id')->references('id')->on('accommodations')->onDelete('cascade');
             $table->foreign('room_type_id')->references('id')->on('room_types')->onDelete('cascade');
             $table->foreign('rating_id')->references('id')->on('star_ratings')->onDelete('cascade');
+
         });
     }
 }
